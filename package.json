@@ -1,0 +1,27 @@
+{
+  "name": "furb",
+  "version": "0.0.1",
+  "description": "A boilerplate for Firebase-UniversalRedux-Bootstrap/MaterialUI projects",
+  "main": "index.html",
+  "scripts": {
+    "test": "NODE_ENV=production mocha './tests/**/*.spec.js' --compilers js:babel-core/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magp/furb.git"
+  },
+  "keywords": [
+    "Boilerplate",
+    "React",
+    "Redux",
+    "UniversalJS",
+    "Bootstrap",
+    "MaterialUI"
+  ],
+  "author": "magp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/magp/furb/issues"
+  },
+  "homepage": "https://github.com/magp/furb#readme"
+}
