@@ -5,6 +5,7 @@
   "main": "app/index.html",
   "scripts": {
     "start": "echo 'Nothing to start. See app/index.html'",
+    "start:api": "node api/server.js",
     "test": "echo 'NODE_ENV=production mocha './tests/**/*.spec.js' --compilers js:babel-core/register'",
     "lint": "eslint --config=./.eslintrc app/**/**/*.jsx"
   },
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/magp/furb#readme",
   "dependencies": {
+    "express": "^4.15.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
