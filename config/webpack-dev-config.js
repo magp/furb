@@ -5,6 +5,7 @@ var htmlcopy = require('html-webpack-plugin');
 module.exports = {
   devtool: 'source-map',
   entry: [
+    'react-hot-loader/patch',
     'webpack-hot-middleware/client',
     './app/client.jsx'
   ],
@@ -24,14 +25,14 @@ module.exports = {
       }
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   module: {
     loaders: [
     // js
     {
       test: /\.jsx?$/,
-      loaders: ['babel-loader?presets[]=es2015,presets[]=react'],
+      loaders: ['babel-loader?presets[]=es2015,presets[]=react,plugins[]=react-hot-loader/babel'],
       include: path.join(__dirname, '../app')
     },
     // CSS
@@ -44,5 +45,8 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+  },
+  watchOptions: {
+    aggregateTimeout: 200,
   }
 };
