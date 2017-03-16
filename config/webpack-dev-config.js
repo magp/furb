@@ -47,6 +47,6 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   watchOptions: {
-    aggregateTimeout: 200,
+    aggregateTimeout: 300,
   }
 };
