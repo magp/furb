@@ -7,7 +7,7 @@ import NotFound from '../components/NotFound';
 
 import links from '../../api/data/links.json';
 
-const linksarr = Object.values(links);
+const linksarr = Object.keys(links).map(k => links[k]);
 
 function Routes() {
   return (

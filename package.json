@@ -1,18 +1,19 @@
 {
   "name": "furb",
   "version": "0.0.1",
-  "description": "A boilerplate for Firebase-UniversalRedux-Bootstrap/MaterialUI projects",
+  "description": "A boilerplate for OpenShift-Universal-Redux/MobX-Bootstrap/MaterialUI projects",
   "main": "app/server.jsx",
   "scripts": {
-    "start": "concurrently --kill-others \"npm run start:api\" \"npm run start:back\"",
-    "start:back": "node app/server.js",
+    "build": "npm run clean && npm run build:client && npm run build:server",
+    "build:client": "NODE_ENV=production webpack --config config/webpack-prod-client-config.js",
+    "build:server": "NODE_ENV=production webpack --config config/webpack-prod-server-config.js",
+    "clean": "rimraf dist",
+    "lint": "eslint --config=./.eslintrc app/**/**/*.jsx app/**/**/*.js",
+    "start": "concurrently --kill-others \"npm run start:api\" \"npm run start:prod\"",
     "start:api": "node api/server.js",
-    "clean": "rimraf static",
-    "serve:prod": "http-server ./static -o -p 3032",
-    "build:app": "NODE_ENV=production webpack --config config/webpack-prod-config.js",
-    "build": "npm run clean && npm run build:app && npm run serve:prod",
-    "test": "echo 'NODE_ENV=production mocha './tests/**/*.spec.js' --compilers js:babel-core/register'",
-    "lint": "eslint --config=./.eslintrc app/**/**/*.jsx"
+    "start:dev": "NODE_ENV=development node app/server/serverlauncher.js",
+    "start:prod": "NODE_ENV=production node dist/server.js",
+    "test": "echo 'NODE_ENV=production mocha './tests/**/*.spec.js' --compilers js:babel-core/register'"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
   },
   "homepage": "https://github.com/magp/furb#readme",
   "dependencies": {
+    "concurrently": "^3.4.0",
     "express": "^4.15.2",
     "history": "^4.6.1",
     "react": "^15.4.2",
@@ -45,20 +47,19 @@
     "babel-loader": "^6.4.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
-    "concurrently": "^3.4.0",
     "eslint": "^3.17.1",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
-    "html-webpack-plugin": "^2.28.0",
-    "http-server": "^0.9.0",
     "node-sass": "^4.5.0",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
+    "source-map-support": "^0.4.14",
     "style-loader": "^0.14.0",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
-    "webpack-hot-middleware": "^2.17.1"
+    "webpack-hot-middleware": "^2.17.1",
+    "webpack-node-externals": "^1.5.4"
   }
 }

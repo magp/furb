@@ -1,24 +1,19 @@
 var path = require('path');
 var webpack = require('webpack');
-var htmlcopy = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
   entry: [
     'react-hot-loader/patch',
     'webpack-hot-middleware/client',
-    './app/client.jsx'
+    './app/client/clientDev.jsx'
   ],
   output: {
     path: path.join(__dirname, '../static'),
-    filename: 'source.js',
+    filename: 'client.js',
     publicPath: '/static/'
   },
   plugins: [
-    new htmlcopy({
-      filename: 'app/index.html',
-      template: 'app/index.html'
-    }),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': "'development'"

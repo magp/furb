@@ -5,9 +5,9 @@ function Layout() {
   return (
     <div>
       <h1>Welcome to Furb</h1>
-      <Link to="./">Home</Link>
-      <Link to="./about">About</Link>
-      <Link to="./test">Test</Link>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+      <Link to="/test">Test</Link>
     </div>
   );
 }

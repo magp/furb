@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Routes from '../routes/Routes';
 
-function AppRoutes() {
+function ClientRoutesDev() {
   return (
     <BrowserRouter>
       <Routes />
@@ -11,4 +11,4 @@ function AppRoutes() {
   );
 }
 
-export default AppRoutes;
+export default ClientRoutesDev;
