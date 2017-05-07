@@ -1,7 +1,7 @@
 {
   "name": "furb",
   "version": "0.0.1",
-  "description": "A boilerplate for OpenShift-Universal-Redux/MobX-Bootstrap/MaterialUI projects",
+  "description": "A boilerplate for Universal-Redux/MobX-Bootstrap/MaterialUI projects",
   "main": "app/server.jsx",
   "scripts": {
     "build": "npm run clean && npm run build:client && npm run build:server",
