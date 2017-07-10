@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Layout from './Layout';
 
@@ -22,10 +23,10 @@ function List(props) {
 }
 
 List.propTypes = {
-  links: React.PropTypes.arrayOf(
-    React.PropTypes.shape({
-      text: React.PropTypes.string,
-      link: React.PropTypes.string,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string,
+      link: PropTypes.string,
     }),
   ).isRequired,
 };
